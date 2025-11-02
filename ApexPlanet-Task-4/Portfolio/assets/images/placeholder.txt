@@ -1,0 +1,14 @@
+# Image Placeholder
+
+Place your profile image here as "profile-image.jpg"
+
+Recommended specifications:
+- Format: JPG or PNG
+- Size: 400x400 pixels or larger
+- Aspect ratio: Square (1:1)
+- File size: Under 1MB for optimal loading
+
+
+
+
+

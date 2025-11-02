@@ -1,0 +1,54 @@
+{
+  "name": "soumyadeep-sarkar-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Soumyadeep Sarkar - Digital Craftsman & Web3 Developer",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+  "postbuild": "node scripts/postbuild.js",
+    "preview": "vite preview",
+    "lint": "eslint assets/scripts/**/*.js",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "portfolio",
+    "web3",
+    "blockchain",
+    "react",
+    "javascript",
+    "developer",
+    "fullstack",
+    "ethereum",
+    "aptos",
+    "solidity"
+  ],
+  "author": {
+    "name": "Soumyadeep Sarkar",
+    "email": "soumyadeepsarkar2004@outlook.com",
+  "url": "https://github.com/soumyadeepsarkar-2004"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+  "url": "https://github.com/soumyadeepsarkar-2004/portfolio.git"
+  },
+  "homepage": "https://soumyadeepsarkar.vercel.app",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "vite": "^7.1.9"
+  },
+  "dependencies": {
+    "lucide": "^0.545.0"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}
+
+
+
+
+

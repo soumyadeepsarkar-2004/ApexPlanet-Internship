@@ -1,0 +1,92 @@
+/* Component Styles */
+
+.brand-link {
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem 0.25rem 0.25rem;
+    background-color: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.brand-link:hover {
+    background-color: rgba(56, 189, 248, 0.12);
+    border-color: rgba(56, 189, 248, 0.65);
+}
+
+.brand-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    object-fit: cover;
+    border: 2px solid rgba(56, 189, 248, 0.6);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.45);
+    transition: transform 0.3s ease;
+}
+
+.brand-link:hover .brand-avatar {
+    transform: scale(1.05);
+}
+
+/* Spotlight Card Effect */
+.spotlight-card {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.spotlight-card:before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: var(--mouseX, -100px);
+    top: var(--mouseY, -100px);
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, var(--primary-color) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.spotlight-card:hover:before {
+    opacity: 0.1;
+}
+
+.spotlight-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+}
+
+/* Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Page Transitions */
+.page {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.page.hidden {
+    opacity: 0;
+    transform: scale(0.98);
+    pointer-events: none;
+    position: absolute;
+}
+
+.detail-page-container {
+    min-height: 100vh;
+}
+
+
+

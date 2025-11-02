@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Soumyadeep Sarkar | Digital Craftsman & Web3 Developer</title>
+    <meta name="description" content="Portfolio of Soumyadeep Sarkar - Information Technology undergraduate, Web3 developer, and blockchain enthusiast. Specializing in dApp development, smart contracts, and full-stack solutions.">
+    <meta name="keywords" content="Soumyadeep Sarkar, Web3 Developer, Blockchain, dApp, Solidity, React, Portfolio, Digital Craftsman">
+    <meta name="author" content="Soumyadeep Sarkar">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Soumyadeep Sarkar | Digital Craftsman & Web3 Developer">
+    <meta property="og:description" content="Passionate about creating robust full-stack solutions and exploring the decentralized future with Web3 technologies.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://soumyadeepsarkar.vercel.app">
+    <meta property="og:image" content="https://soumyadeepsarkar.vercel.app/assets/images/profile-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Soumyadeep Sarkar | Digital Craftsman & Web3 Developer">
+    <meta name="twitter:description" content="Passionate about creating robust full-stack solutions and exploring the decentralized future with Web3 technologies.">
+    <meta name="twitter:image" content="https://soumyadeepsarkar.vercel.app/assets/images/profile-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/styles/main.css">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0A0A0A">
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Main Content Page -->
+    <div id="main-page" class="page">
+        <main class="container mx-auto px-6 pt-24 md:pt-32">
+            <!-- Hero Section -->
+            <div id="hero-container"></div>
+
+            <!-- About Section -->
+            <div id="about-container"></div>
+            
+            <!-- Experience Section -->
+            <div id="experience-container"></div>
+
+            <!-- Projects Section -->
+            <div id="projects-container"></div>
+
+            <!-- Skills Section -->
+            <div id="skills-container"></div>
+        </main>
+        
+        <!-- Footer -->
+        <div id="footer-container"></div>
+    </div>
+    
+    <!-- Detail Page Container -->
+    <div id="detail-page-container"></div>
+
+    <!-- Scripts -->
+    <script type="module" src="assets/scripts/main.js"></script>
+    
+    <!-- Component Loader Script -->
+    <script>
+        // Load HTML components
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+                
+                // Re-initialize Lucide icons after loading new content
+                if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+                }
+
+                if (window.animationManager) {
+                    window.animationManager.observeNewElements();
+                }
+            } catch (error) {
+                console.error(`Error loading component ${componentPath}:`, error);
+            }
+        }
+
+        // Load all components
+        document.addEventListener('DOMContentLoaded', async () => {
+            await Promise.all([
+                loadComponent('header-container', 'components/header.html'),
+                loadComponent('hero-container', 'components/hero.html'),
+                loadComponent('about-container', 'components/about.html'),
+                loadComponent('experience-container', 'components/experience.html'),
+                loadComponent('projects-container', 'components/projects.html'),
+                loadComponent('skills-container', 'components/skills.html'),
+                loadComponent('footer-container', 'components/footer.html'),
+                loadComponent('detail-page-container', 'components/detail-page.html')
+            ]);
+        });
+    </script>
+
+    <!-- Analytics Script (Add your analytics code here) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+</body>
+</html>

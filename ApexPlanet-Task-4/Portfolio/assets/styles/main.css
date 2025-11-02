@@ -1,0 +1,32 @@
+/* Main Stylesheet - Imports all other stylesheets */
+
+@import url('variables.css');
+@import url('base.css');
+@import url('components.css');
+
+/* Additional utility styles */
+.profile-image {
+    border: 2px solid rgba(56, 189, 248, 0.5);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+}
+
+.status-indicator {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-tag {
+    background-color: #1f2937;
+    color: #d1d5db;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.skill-tag:hover {
+    background-color: #374151;
+    transform: translateY(-1px);
+}
+
+
+
+
+
