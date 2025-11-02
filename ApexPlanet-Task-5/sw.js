@@ -6,7 +6,7 @@ const OFFLINE_ASSETS = [
   '/cart.html',
   '/style.css',
   '/app.js',
-  '/assets/images/phone.jpg',
+  '/assets/images/smartphone.jpg',
   '/assets/images/laptop.jpg',
   '/assets/images/tshirt.jpg'
 ];

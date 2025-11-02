@@ -30,14 +30,26 @@ body {
   color: var(--text-color);
   min-height: 100vh;
   transition: background 0.6s ease, color 0.4s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
   background: linear-gradient(120deg, var(--header-bg), #1e293b);
   color: var(--header-text);
   text-align: center;
-  padding: 36px 20px;
+  padding: clamp(28px, 4vw, 48px) clamp(20px, 4vw, 48px);
   box-shadow: 0 20px 45px rgba(8, 47, 73, 0.3);
+}
+
+header h1 {
+  font-size: clamp(1.8rem, 2.4vw + 1rem, 3rem);
+  margin-bottom: 12px;
+}
+
+header p {
+  font-size: clamp(1rem, 1vw + 0.8rem, 1.15rem);
+  margin: 0;
 }
 
 a {
@@ -59,16 +71,18 @@ h2 {
 }
 
 main {
-  padding: 24px;
-  max-width: 920px;
-  margin: -40px auto 40px;
+  padding: clamp(20px, 4vw, 36px);
+  width: min(920px, calc(100% - clamp(32px, 6vw, 80px)));
+  margin: clamp(-32px, -6vw, -48px) auto clamp(20px, 5vw, 36px);
+  display: grid;
+  gap: clamp(20px, 4vw, 32px);
+  flex: 1;
 }
 
 section {
   background-color: var(--surface);
-  margin: 24px 0;
-  padding: 24px;
-  border-radius: 18px;
+  padding: clamp(20px, 3vw, 30px);
+  border-radius: clamp(16px, 2vw, 22px);
   border: 1px solid var(--surface-border);
   box-shadow: 0 24px 40px rgba(15, 23, 42, 0.12);
   backdrop-filter: blur(6px);
@@ -101,12 +115,13 @@ section:hover {
   display: inline-flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 16px;
-  padding: 20px 24px;
+  margin-top: 8px;
+  padding: clamp(18px, 3vw, 26px);
   border-radius: 20px;
   background: var(--surface);
   border: 1px dashed var(--surface-border);
   box-shadow: 0 14px 28px rgba(2, 6, 23, 0.12);
+  align-items: flex-start;
 }
 
 button {
@@ -146,17 +161,65 @@ footer {
   letter-spacing: 0.02em;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   main {
-    padding: 20px;
-    margin: -32px auto 32px;
+    width: min(720px, calc(100% - clamp(28px, 8vw, 64px)));
+    margin-top: clamp(-24px, -4vw, -32px);
   }
 
   section {
-    padding: 20px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    background: var(--bg-color);
+  }
+
+  main {
+    width: 100%;
+    padding: clamp(18px, 5vw, 26px);
+    margin: -20px auto 32px;
+  }
+
+  section {
+    padding: clamp(18px, 4vw, 24px);
+  }
+
+  .tag-list {
+    gap: 10px;
+  }
+
+  .tag-list li {
+    font-size: 0.95rem;
+    padding: 8px 14px;
   }
 
   .action-panel {
     width: 100%;
+    align-items: stretch;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  section {
+    border-radius: 16px;
+  }
+
+  .tag-list {
+    flex-direction: column;
+  }
+
+  .action-panel {
+    padding: 18px;
   }
 }

@@ -2,33 +2,33 @@
 
 // Sample product data (in real project fetch this from server/api)
 const products = [
-  { id: 'p1', title: 'Smartphone', price: 19999, img: 'assets/images/smartphone.png', category: 'electronics' },
-  { id: 'p2', title: 'Laptop', price: 54999, img: 'assets/images/laptop.png', category: 'electronics' },
-  { id: 'p3', title: 'T-Shirt', price: 799, img: 'assets/images/tshirt.png', category: 'clothes' }
+  { id: 'p1', title: 'Smartphone', price: 17999, img: 'assets/images/smartphone.jpg', category: 'electronics' },
+  { id: 'p2', title: 'Laptop', price: 49999, img: 'assets/images/laptop.jpg', category: 'electronics' },
+  { id: 'p3', title: 'T-Shirt', price: 599, img: 'assets/images/tshirt.png', category: 'clothes' }
 ];
 
 // Utility: format currency
-function fmt(n){ return '₹' + n.toLocaleString('en-IN'); }
+function fmt(n) { return '₹' + n.toLocaleString('en-IN'); }
 
 /* ====== CART (localStorage) ====== */
 const CART_KEY = 'mini_cart_v1';
 
-function getCart(){
-  try{
+function getCart() {
+  try {
     return JSON.parse(localStorage.getItem(CART_KEY)) || {};
-  }catch(e){
+  } catch (e) {
     console.error('cart parse err', e);
     return {};
   }
 }
 
-function saveCart(cart){
+function saveCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
   updateCartCount();
 }
 
 // add item to cart
-function addToCart(productId){
+function addToCart(productId) {
   const cart = getCart();
   cart[productId] = (cart[productId] || 0) + 1;
   saveCart(cart);
@@ -36,16 +36,16 @@ function addToCart(productId){
 }
 
 // remove item
-function removeFromCart(productId){
+function removeFromCart(productId) {
   const cart = getCart();
   delete cart[productId];
   saveCart(cart);
 }
 
 /* ====== RENDERING ====== */
-function renderProducts(){
+function renderProducts() {
   const listEl = document.getElementById('product-list');
-  if(!listEl) return;
+  if (!listEl) return;
   listEl.innerHTML = '';
   products.forEach(p => {
     const div = document.createElement('article');
@@ -68,14 +68,14 @@ function renderProducts(){
   });
 }
 
-function renderCartPage(){
+function renderCartPage() {
   const cartItemsEl = document.getElementById('cart-items');
-  if(!cartItemsEl) return;
+  if (!cartItemsEl) return;
   const cart = getCart();
   cartItemsEl.innerHTML = '';
   let total = 0;
   const keys = Object.keys(cart);
-  if(keys.length === 0){
+  if (keys.length === 0) {
     cartItemsEl.innerHTML = '<li>Your cart is empty</li>';
     document.getElementById('cart-summary').textContent = '';
     return;
@@ -83,7 +83,7 @@ function renderCartPage(){
   keys.forEach(id => {
     const qty = cart[id];
     const prod = products.find(p => p.id === id);
-    if(!prod) return;
+    if (!prod) return;
     total += prod.price * qty;
     const li = document.createElement('li');
     li.className = 'cart-item';
@@ -110,26 +110,26 @@ function renderCartPage(){
 }
 
 /* ======== UI helpers ======== */
-function updateCartCount(){
+function updateCartCount() {
   const cart = getCart();
-  const totalCount = Object.values(cart).reduce((a,b)=>a+b,0);
+  const totalCount = Object.values(cart).reduce((a, b) => a + b, 0);
   document.getElementById('cart-count') && (document.getElementById('cart-count').textContent = totalCount);
 }
 
-function flashMessage(msg){
+function flashMessage(msg) {
   // simple accessible toast
   const t = document.createElement('div');
   t.textContent = msg;
-  t.style.position='fixed';
-  t.style.right='1rem';
-  t.style.bottom='1rem';
-  t.style.background='rgba(6,24,44,0.9)';
-  t.style.color='white';
-  t.style.padding='8px 12px';
-  t.style.borderRadius='8px';
-  t.style.zIndex=9999;
+  t.style.position = 'fixed';
+  t.style.right = '1rem';
+  t.style.bottom = '1rem';
+  t.style.background = 'rgba(6,24,44,0.9)';
+  t.style.color = 'white';
+  t.style.padding = '8px 12px';
+  t.style.borderRadius = '8px';
+  t.style.zIndex = 9999;
   document.body.appendChild(t);
-  setTimeout(()=> t.remove(), 1800);
+  setTimeout(() => t.remove(), 1800);
 }
 
 /* ====== PAGE INIT ====== */
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Clear cart button on cart page
   const clearBtn = document.getElementById('clearCartBtn');
-  if(clearBtn){
+  if (clearBtn) {
     clearBtn.addEventListener('click', () => {
       localStorage.removeItem(CART_KEY);
       renderCartPage();
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* register service worker for caching & offline capability */
-  if('serviceWorker' in navigator){
+  if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
       .then(() => console.log('SW registered'))
       .catch(err => console.warn('SW reg failed', err));

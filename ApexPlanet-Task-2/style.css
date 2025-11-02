@@ -25,17 +25,37 @@ body {
     radial-gradient(circle at bottom left, rgba(37, 210, 221, 0.12), transparent 45%),
     var(--bg);
   color: var(--text);
-  padding-bottom: 60px;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 6vw, 48px);
+  padding-bottom: clamp(32px, 8vw, 56px);
 }
 
 header {
   background: linear-gradient(115deg, #0f172a, #312e81);
   color: #f8fafc;
   text-align: center;
-  padding: 42px 20px 56px;
+  padding: clamp(32px, 6vw, 56px) clamp(20px, 6vw, 48px) clamp(42px, 8vw, 72px);
   border-bottom-left-radius: 48px;
   border-bottom-right-radius: 48px;
   box-shadow: 0 40px 80px rgba(15, 23, 42, 0.35);
+}
+
+header h1 {
+  font-size: clamp(2rem, 2.6vw + 1.2rem, 3.2rem);
+  margin-bottom: 12px;
+}
+
+header p {
+  margin: 0;
+  font-size: clamp(1rem, 1vw + 0.8rem, 1.2rem);
 }
 
 h1,
@@ -52,8 +72,8 @@ section {
 .todo-section {
   background: var(--surface);
   max-width: 640px;
-  margin: 40px auto;
-  padding: 30px;
+  margin: clamp(24px, 7vw, 48px) auto;
+  padding: clamp(24px, 5vw, 34px);
   border-radius: 26px;
   box-shadow: 0 30px 70px rgba(101, 84, 251, 0.18);
   border: 1px solid rgba(101, 84, 251, 0.12);
@@ -147,21 +167,23 @@ button:hover {
 
 .responsive-layout {
   text-align: center;
-  padding: 32px;
-  max-width: 900px;
+  padding: clamp(24px, 5vw, 36px);
+  max-width: 960px;
   margin: 0 auto;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 22px;
-  padding: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: clamp(16px, 4vw, 28px);
+  padding: clamp(12px, 3vw, 18px);
+  width: min(100%, 980px);
+  margin: 0 auto;
 }
 
 .grid-item {
-  min-height: 150px;
-  padding: 28px;
+  min-height: clamp(140px, 20vw, 180px);
+  padding: clamp(20px, 4vw, 32px);
   border-radius: 24px;
   background: var(--grid-gradient);
   color: #f9fafb;
@@ -261,10 +283,22 @@ footer {
   text-align: center;
   background: #0f172a;
   color: #f8fafc;
-  padding: 24px 16px;
+  padding: clamp(20px, 4vw, 28px) 16px;
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
-  margin-top: 80px;
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+
+  .form-section,
+  .todo-section {
+    max-width: 90%;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 48%), 1fr));
+  }
 }
 
 @media (max-width: 600px) {
@@ -290,5 +324,31 @@ footer {
 
   .task-actions button {
     flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+
+  .task-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .task-actions button {
+    width: 100%;
+  }
+
+  footer {
+    margin-top: auto;
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
   }
 }

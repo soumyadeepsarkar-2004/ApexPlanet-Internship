@@ -15,55 +15,57 @@
     <p>Intermediate HTML, CSS, and JavaScript</p>
   </header>
 
-  <!-- Contact Form Section -->
-  <section class="form-section">
-    <h2>Contact Form</h2>
-    <form id="contactForm">
-      <div class="form-group">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" placeholder="Enter your full name" required />
-      </div>
+  <main>
+    <!-- Contact Form Section -->
+    <section class="form-section">
+      <h2>Contact Form</h2>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" placeholder="Enter your full name" required />
+        </div>
 
-      <div class="form-group">
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" placeholder="Enter your email" required />
-      </div>
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" placeholder="Enter your email" required />
+        </div>
 
-      <div class="form-group">
-        <label for="message">Message:</label>
-        <textarea id="message" rows="4" placeholder="Type your message here..." required></textarea>
-      </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" rows="4" placeholder="Type your message here..." required></textarea>
+        </div>
 
-      <button type="submit">Send Message</button>
-    </form>
-    <p id="formStatus" class="form-status" aria-live="polite">Fill out the form to say hello.</p>
-  </section>
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="formStatus" class="form-status" aria-live="polite">Fill out the form to say hello.</p>
+    </section>
 
-  <!-- Responsive Layout Section -->
-  <section class="responsive-layout">
-    <h2>Responsive Layout Demo</h2>
-    <div class="grid-container">
-      <div class="grid-item">Box 1</div>
-      <div class="grid-item">Box 2</div>
-      <div class="grid-item">Box 3</div>
-      <div class="grid-item">Box 4</div>
-    </div>
-  </section>
+    <!-- Responsive Layout Section -->
+    <section class="responsive-layout">
+      <h2>Responsive Layout Demo</h2>
+      <div class="grid-container">
+        <div class="grid-item">Box 1</div>
+        <div class="grid-item">Box 2</div>
+        <div class="grid-item">Box 3</div>
+        <div class="grid-item">Box 4</div>
+      </div>
+    </section>
 
-  <!-- Dynamic To-Do List Section -->
-  <section class="todo-section">
-    <h2>Dynamic To-Do List</h2>
-    <div class="todo-container">
-      <div class="todo-container-taskInput">
-        <input type="text" id="taskInput" placeholder="Capture your next action..." aria-label="Add a new task" />
-        <button id="addTask">Add Task</button>
+    <!-- Dynamic To-Do List Section -->
+    <section class="todo-section">
+      <h2>Dynamic To-Do List</h2>
+      <div class="todo-container">
+        <div class="todo-container-taskInput">
+          <input type="text" id="taskInput" placeholder="Capture your next action..." aria-label="Add a new task" />
+          <button id="addTask">Add Task</button>
+        </div>
+        <p id="todoStatus" class="todo-status" aria-live="polite">No tasks yet—plan something awesome.</p>
+        <div class="todo-container-taskList">
+          <ul id="taskList"></ul>
+        </div>
       </div>
-      <p id="todoStatus" class="todo-status" aria-live="polite">No tasks yet—plan something awesome.</p>
-      <div class="todo-container-taskList">
-        <ul id="taskList"></ul>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 ApexPlanet Internship | Created by Soumyadeep Sarkar</p>

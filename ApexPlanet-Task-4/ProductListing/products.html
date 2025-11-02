@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Product Listing</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>🛍️ Product Listing</h1>
+  <header class="site-header">
+    <div class="wrapper">
+      <h1 class="site-title">Curated Product Wall</h1>
+      <p class="site-subtitle">Browse by category and sort to find your next favourite pick.</p>
+    </div>
+  </header>
 
-  <select id="filter">
-    <option value="all">All</option>
-    <option value="electronics">Electronics</option>
-    <option value="clothes">Clothes</option>
-  </select>
+  <main class="site-main">
+    <section class="filters" aria-label="Product controls">
+      <div class="filter-group">
+        <label for="filter">Filter by category</label>
+        <select id="filter">
+          <option value="all">All</option>
+          <option value="electronics">Electronics</option>
+          <option value="clothes">Clothes</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="sort">Sort catalogue</label>
+        <select id="sort">
+          <option value="default">Sort by</option>
+          <option value="lowToHigh">Price: Low to High</option>
+          <option value="highToLow">Price: High to Low</option>
+        </select>
+      </div>
+    </section>
 
-  <select id="sort">
-    <option value="default">Sort by</option>
-    <option value="lowToHigh">Price: Low to High</option>
-    <option value="highToLow">Price: High to Low</option>
-  </select>
+    <section class="product-grid" id="productContainer" aria-live="polite"></section>
+  </main>
 
-  <div id="productContainer"></div>
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p>Crafted for ApexPlanet Task 4 &mdash; curated with care.</p>
+    </div>
+  </footer>
 
   <script src="products.js"></script>
 </body>
+
 </html>
