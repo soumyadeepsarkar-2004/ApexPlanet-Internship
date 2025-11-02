@@ -1,0 +1,21 @@
+#productContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.product {
+  background: #f1f5f9;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.product:hover {
+  background: #e2e8f0;
+}

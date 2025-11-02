@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Final Project — Mini Shop</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>MiniShop</h1>
+    <nav>
+      <a href="index.html">Products</a>
+      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Featured Products</h2>
+      <p>Simple demo combining JS, localStorage, responsive layout and caching.</p>
+    </section>
+
+    <section id="product-list" class="product-grid" aria-live="polite">
+      <!-- Products will be rendered here by app.js -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 MiniShop — Built for ApexPlanet Internship</p>
+  </footer>
+</body>
+</html>

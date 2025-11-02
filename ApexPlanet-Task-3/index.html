@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Styling & JavaScript | ApexPlanet Internship</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>ApexPlanet Internship - Task 3</h1>
+    <p>Advanced Styling and JavaScript</p>
+  </header>
+
+  <!-- Responsive Section -->
+  <section class="responsive-demo">
+    <h2>Responsive Design Monitor</h2>
+    <div class="responsive-box">
+      <p class="viewport-label">Viewport width</p>
+      <p class="viewport-value" id="viewportWidth">— px</p>
+      <p class="viewport-tip" id="viewportTip">Flex the screen to discover live breakpoints.</p>
+    </div>
+  </section>
+
+  <!-- Quiz Section -->
+  <section class="quiz-section">
+    <h2>Interactive Quiz</h2>
+    <div id="quiz-container">
+      <div class="quiz-progress">
+        <span id="quizStep">Question 1 of 0</span>
+        <div class="progress-track">
+          <div id="progressBar"></div>
+        </div>
+      </div>
+      <p id="question"></p>
+      <div id="answers"></div>
+      <p id="quizFeedback" aria-live="polite"></p>
+      <button id="next-btn">Next Question</button>
+      <p id="score"></p>
+    </div>
+  </section>
+
+  <!-- API Section -->
+  <section class="api-section">
+    <h2>Daily Inspiration (API Demo)</h2>
+    <div class="quote-card">
+      <p id="joke">Tap the button to fetch a fresh thought.</p>
+      <span id="quoteAuthor" class="quote-author"></span>
+    </div>
+    <button id="fetchJoke">Load Inspiration</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ApexPlanet Internship | Created by Soumyadeep Sarkar</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
