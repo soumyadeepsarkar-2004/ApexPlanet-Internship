@@ -1,4 +1,4 @@
-# Task 5 – Mini Shop
+# Task 5 – Shopify
 
 Offline-ready storefront delivered for the ApexPlanet internship. Combines responsive merchandising, persistent cart state, and a light service worker to showcase progressive web app fundamentals.
 
